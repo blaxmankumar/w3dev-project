@@ -1,0 +1,27 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and deploy
+        uses: blaxmankumar/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: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
+          BRANCH: gh-pages
+          FOLDER: build
+
+      - name: Push to GitHub
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: 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
+          branch: main
