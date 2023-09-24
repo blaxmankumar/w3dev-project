@@ -18,6 +18,10 @@ jobs:
         with:
           ACCESS_TOKEN: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
           BRANCH: gh-pages
-          
+          FOLDER: bmi-calculator
 
-   
+      - name: Push to GitHub
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: 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
+          branch: main
